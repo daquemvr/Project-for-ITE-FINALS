@@ -1,0 +1,942 @@
+        <!doctype html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="theme-color" content="#f7f4ed" />
+            <meta
+            name="description"
+            content="Explore 30 books of the Bible in a thoughtful, searchable reading library."
+            />
+            <title>Word of God</title>
+            <link rel="stylesheet" href="style.css" />
+        </head>
+        <body>
+            <div class="page-shell">
+            <aside class="sidebar" aria-label="Sidebar navigation">
+                <a class="brand sidebar-brand" href="#home">
+                <span>Word of God</span>
+                </a>
+                <button
+                class="developer-card"
+                data-developer-open
+                type="button"
+                aria-haspopup="dialog"
+                >
+                <img
+                    class="developer-avatar"
+                    src="Student Developer.jpg"
+                    alt="Michael Vincent R. Daque"
+                />
+                <span class="developer-card-copy">
+                    <span class="developer-card-label">STUDENT DEVELOPER</span>
+                    <strong id="developerCardName">Add Developer Name</strong>
+                    <span
+                    >View developer profile <span aria-hidden="true">→</span></span
+                    >
+                </span>
+                </button>
+                <p class="sidebar-label">LIBRARY</p>
+                <nav class="sidebar-nav" aria-label="Library navigation">
+                <a href="#home" class="nav-item active" data-view="all">Home</a>
+                <a href="#library" class="nav-item" data-view="all">The books</a>
+                <a href="#categories" class="nav-item" data-scroll-link>Categories</a>
+                <a href="#library" class="nav-item" data-view="saved">Saved books</a>
+                <a href="#bibleVerses" class="nav-item" data-scroll-link
+                    >Bible Verse</a
+                >
+                </nav>
+            </aside>
+
+            <div class="main-panel">
+                <header class="main-header">
+                <div class="container nav-wrap">
+                    <a class="brand mobile-brand" href="#home">
+                    
+                    <span>Word of God</span>
+                    </a>
+                    <nav class="main-nav" id="mainNavigation" aria-label="Main navigation">
+                    <a href="#home" class="active" data-view="all">Home</a>
+                    <a href="#library" data-view="all">The books</a>
+                    <a href="#categories" data-scroll-link>Categories</a>
+                    <a href="#library" data-view="saved">Saved books</a>
+                    <a href="#bibleVerses" data-scroll-link>Bible Verse</a>
+                    <a href="#developerModal" class="responsive-developer-link" data-developer-open aria-haspopup="dialog">Developer</a>
+                    </nav>
+                    <div class="header-actions">
+                    <button
+                        class="nav-toggle"
+                        id="navToggle"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-controls="mainNavigation"
+                        aria-expanded="false"
+                    >
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 7h16M4 12h16M4 17h16"></path>
+                        </svg>
+                    </button>
+                    <button
+                        class="account-toggle"
+                        id="accountToggle"
+                        type="button"
+                        aria-label="Open personal information"
+                        title="Personal information"
+                        aria-haspopup="dialog"
+                    >
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="8" r="3.5"></circle>
+                        <path d="M4.8 20a7.2 7.2 0 0 1 14.4 0"></path>
+                        </svg>
+                    </button>
+                    <button
+                        class="theme-toggle"
+                        type="button"
+                        aria-label="Switch to dark mode"
+                        title="Toggle theme"
+                    >
+                        ☾
+                    </button>
+                    </div>
+                </div>
+                </header>
+
+                <main id="home">
+                <section class="hero container">
+                    <div class="hero-copy">
+                    <span class="eyebrow"
+                        ><span aria-hidden="true"></span> A guide to the Bible</span
+                    >
+                    <h1>One library.<br /><em>His whole story.</em></h1>
+                    <p>
+                        Explore the people, wisdom, promises, and hope found across the
+                        books of the Bible.
+                    </p>
+                    <div class="cta-row">
+                        <button
+                        class="primary-btn"
+                        type="button"
+                        data-scroll-to="library"
+                        >
+                        Explore the books <span aria-hidden="true">→</span>
+                        </button>
+                        <button
+                        class="secondary-btn"
+                        type="button"
+                        data-scroll-to="categories"
+                        >
+                        Browse categories
+                        </button>
+                    </div>
+                    </div>
+
+                    <div class="hero-visual" aria-label="Word of God">
+                    <div class="hero-art">
+                        <span class="hero-art-caption">SCRIPTURE · TRUTH · HOPE</span>
+                        <span class="hero-art-star" aria-hidden="true">✝</span>
+                        <div class="hero-feature">
+                        <span class="mini-tag">A LIGHT FOR EVERY JOURNEY</span>
+                        <h2 id="featuredTitle">Word of God</h2>
+                        <p id="featuredDescription">
+                            Discover timeless wisdom, stories of faith, and promises of
+                            hope throughout the books of the Bible.
+                        </p>
+                        <button class="text-link" id="featuredButton" data-scroll-to="library" type="button">
+                            Explore the Scriptures <span aria-hidden="true">↗</span>
+                        </button>
+                        </div>
+                    </div>
+                    <span class="hero-decoration" aria-hidden="true"></span>
+                    </div>
+                </section>
+
+                <section class="library-section container" id="library">
+                    <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">A thoughtful reading guide</span>
+                        <h2 id="storySectionTitle">Explore the books</h2>
+                        <p class="section-description">
+                        Find a book, discover its place in the Bible, and save the
+                        ones you want to revisit.
+                        </p>
+                    </div>
+                    <span class="library-count"
+                        ><strong id="totalBookCount"></strong><span>BOOKS</span></span
+                    >
+                    </div>
+
+                    <div class="category-section" id="categories">
+                    <div class="category-heading">
+                        <h3>Browse by Category</h3>
+                    </div>
+                    <div
+                        class="genre-bar"
+                        id="categoryFilters"
+                        aria-label="Filter by category"
+                    ></div>
+                    </div>
+
+                    <div class="toolbar">
+                    <label class="search-box">
+                        <span aria-hidden="true">⌕</span>
+                        <span class="visually-hidden">Search Bible books</span>
+                        <input
+                        id="storySearch"
+                        type="search"
+                        placeholder="Search books, themes, or testament…"
+                        autocomplete="off"
+                        />
+                        <kbd>/</kbd>
+                    </label>
+                    <label class="sort-box">
+                        <span>Sort</span>
+                        <select id="sortSelect" aria-label="Sort books">
+                        <option value="bible">Bible order</option>
+                        <option value="title">A to Z</option>
+                        <option value="testament">Testament</option>
+                        </select>
+                    </label>
+                    </div>
+
+                    <div class="results-row">
+                    <p class="results-count" id="resultsCount" aria-live="polite">
+                        Bible books
+                    </p>
+                    <button
+                        class="clear-filters hidden"
+                        id="clearFilters"
+                        type="button"
+                    >
+                        Clear filters
+                    </button>
+                    </div>
+                    <div class="book-grid" id="bookGrid" aria-live="polite"></div>
+                </section>
+
+                <section class="verses-section container" id="bibleVerses">
+                    <div class="verse-hero">
+                    <div>
+                        <span class="eyebrow">Words for every season</span>
+                        <h2>Bible Verses</h2>
+                        <p>
+                        Find encouragement, hope, peace, and strength in Scripture.
+                        Browse over 50 verses and save a favorite for the day.
+                        </p>
+                    </div>
+                    
+                    </div>
+                    <div
+                    class="featured-verse hidden"
+                    id="featuredVerse"
+                    aria-live="polite"
+                    ></div>
+                    <div class="verse-tools">
+                    <label class="search-box">
+                        <span aria-hidden="true">⌕</span>
+                        <span class="visually-hidden">Search Bible verses</span>
+                        <input
+                        id="verseSearch"
+                        type="search"
+                        placeholder="Search a verse, reference, or topic…"
+                        autocomplete="off"
+                        />
+                    </label>
+                    <p class="verse-count" id="verseCount" aria-live="polite">
+                        Bible verses
+                    </p>
+                    </div>
+                    <div
+                    class="verse-filters"
+                    id="verseFilters"
+                    aria-label="Filter verses by topic"
+                    ></div>
+                    <div class="verse-grid" id="verseGrid" aria-live="polite"></div>
+                    <p class="empty-state hidden" id="verseEmptyState">
+                    No verses found. Try another search or topic.
+                    </p>
+                </section>
+                </main>
+
+                <footer class="site-footer">
+                <div class="container footer-content">
+                    <a class="brand footer-brand" href="#home">
+                    <span>Word of God</span>
+                    </a>
+                    <p>Michael Vincent R. Daque | Final Project for ITE</p>
+                    <a class="back-to-top" href="#home">Back to top ↑</a>
+                    <button
+                    class="footer-developer-link"
+                    data-developer-open
+                    type="button"
+                    >
+                    About the developer
+                    </button>
+                </div>
+                </footer>
+            </div>
+            </div>
+
+            <div
+            class="modal profile-modal hidden"
+            id="accountModal"
+            aria-hidden="true"
+            >
+            <button
+                class="modal-backdrop"
+                type="button"
+                data-close-profile
+                aria-label="Close personal information"
+            ></button>
+            <section
+                class="profile-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="accountTitle"
+            >
+                <button
+                class="close-modal"
+                type="button"
+                data-close-profile
+                aria-label="Close personal information"
+                >
+                ×
+                </button>
+                <span class="eyebrow">YOUR ACCOUNT</span>
+                <h2 id="accountTitle">Personal information</h2>
+                <p class="profile-help">
+                Your details are saved only in this browser and are not sent to a
+                server.
+                </p>
+                <form id="profileForm">
+                <label class="profile-field"
+                    ><span>Full name</span
+                    ><input
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    maxlength="100"
+                    placeholder="Enter your name"
+                    required
+                /></label>
+                <label class="profile-field"
+                    ><span>Email address</span
+                    ><input
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    maxlength="254"
+                    placeholder="name@example.com"
+                /></label>
+                <label class="profile-field"
+                    ><span>Phone number</span
+                    ><input
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    maxlength="30"
+                    placeholder="Optional"
+                /></label>
+                <label class="profile-field"
+                    ><span>Location</span
+                    ><input
+                    name="location"
+                    type="text"
+                    autocomplete="address-level2"
+                    maxlength="100"
+                    placeholder="City or country (optional)"
+                /></label>
+                <div class="profile-actions">
+                    <button class="primary-btn" type="submit">Save information</button>
+                    <button class="secondary-btn" id="clearProfileButton" type="button">
+                    Clear
+                    </button>
+                </div>
+                <p
+                    class="profile-status"
+                    id="profileStatus"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+                </form>
+            </section>
+            </div>
+
+            <div
+            class="modal profile-modal hidden"
+            id="developerModal"
+            aria-hidden="true"
+            >
+            <button
+                class="modal-backdrop"
+                type="button"
+                data-close-profile
+                aria-label="Close developer profile"
+            ></button>
+            <section
+                class="profile-panel developer-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="developerTitle"
+            >
+                <button
+                class="close-modal"
+                type="button"
+                data-close-profile
+                aria-label="Close developer profile"
+                >
+                ×
+                </button>
+                <div class="developer-profile-heading">
+                <img
+                    class="developer-profile-image"
+                    src="Student Developer.jpg"
+                    alt="Student Developer"
+                />
+                <span class="eyebrow">ABOUT</span>
+                <h2 id="developerTitle">Add Developer Name</h2>
+                <p class="developer-role" id="developerRole">Student Developer</p>
+                </div>
+                <div class="developer-details">
+                <p id="developerBio">Add a short introduction about the developer.</p>
+                <p>
+                    <strong>School</strong
+                    ><span id="developerOrganization">Not provided</span>
+                </p>
+                <p><strong>Email</strong><a id="developerEmail">Not provided</a></p>
+                <p>
+                    <strong>Course</strong><span id="developerCourse">Not provided</span>
+                </p>
+                <p>
+                    <strong>Subject / Project</strong><span id="developerSubject">Not provided</span>
+                </p>
+                </div>
+            </section>
+            </div>
+
+            <!-- Developer profile information -->
+            <template id="developerProfileData">
+            <div
+                data-name="Michael Vincent R. Daque"
+                data-role="Student Developer"
+                data-bio="I am Michael Vincent R. Daque, an IT student who enjoys learning and creating through technology. I also love serving at the altar for my Lord, and I strive to bring faith, dedication, and service into everything I do."
+                data-organization="Bestlink College of the Philippines"
+                data-email="michaelvincentdaque724@gmail.com"
+                data-course="Bachelor of Science in Information Technology"
+                data-subject="ITE1"
+            ></div>
+            </template>
+
+            <div class="modal hidden" id="bookModal" aria-hidden="true">
+            <button
+                class="modal-backdrop"
+                type="button"
+                data-close
+                aria-label="Close book details"
+            ></button>
+            <section
+                class="modal-panel reader-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modalTitle"
+            >
+                <button
+                class="close-modal"
+                type="button"
+                aria-label="Close book details"
+                >
+                ×
+                </button>
+                
+                <div class="modal-body">
+                <span class="modal-genre" id="modalCategory">Law</span>
+                <h2 id="modalTitle">Genesis</h2>
+                <div id="bookOverview">
+                    <button
+                    class="testament-button"
+                    id="testamentFilterButton"
+                    type="button"
+                    >
+                    Old Testament
+                    </button>
+                    <p class="modal-synopsis" id="modalSynopsis"></p>
+                    <div class="overview-actions">
+                    <button class="primary-btn" id="startReadingButton" type="button">
+                        Read the Book <span aria-hidden="true">→</span>
+                    </button>
+                    <button
+                        class="secondary-btn"
+                        id="overviewImagesButton"
+                        type="button"
+                    >
+                        Images <span aria-hidden="true">▧</span>
+                    </button>
+                    </div>
+                </div>
+                <div id="bookReader" class="hidden">
+                    <div class="reader-action-row">
+                    <button
+                        class="testament-button"
+                        id="readerTestamentButton"
+                        type="button"
+                    >
+                        Old Testament
+                    </button>
+                    <button
+                        class="reader-mode-button"
+                        id="showImagesButton"
+                        type="button"
+                    >
+                        Images
+                    </button>
+                    <button
+                        class="reader-mode-button"
+                        id="showTextButton"
+                        type="button"
+                    >
+                        Read the Book
+                    </button>
+                    </div>
+                    <div class="reader-page">
+                    <p class="reader-slide-number" id="readerSlideNumber">
+                        PAGE 1 OF 8
+                    </p>
+                    <p class="reader-slide-text" id="readerSlideText"></p>
+                    <div class="reader-image-frame hidden" id="readerImageFrame">
+                        <img id="readerImage" alt="" />
+                    </div>
+                    </div>
+                    <div class="modal-meta">
+                    <button class="modal-save" id="modalSave" type="button">
+                        ♡ Save book
+                    </button>
+                    </div>
+                    <div class="reader-controls">
+                    <button class="reader-nav" id="previousSlide" type="button">
+                        ← Previous
+                    </button>
+                    <div
+                        class="reader-dots"
+                        id="readerDots"
+                        aria-label="Reading progress"
+                    ></div>
+                    <button class="reader-nav" id="nextSlide" type="button">
+                        Next →
+                    </button>
+                    </div>
+                </div>
+                </div>
+            </section>
+            </div>
+
+            <!-- The reader uses one illustration per book. -->
+            <template id="bookImageData">
+                <div data-book-images="Genesis">
+                    <div class="book-image-item" data-book-image>
+                        <img src="Genesis 1.jpg" alt="Illustration for Genesis" />
+                    </div>
+                </div>
+                <div data-book-images="Exodus">
+                    <div class="book-image-item" data-book-image>
+                        <img src="Exodus 1.jpg" alt="Illustration for Exodus: Moses and the burning bush" />
+                    </div>
+                </div>
+            <div data-book-images="Leviticus">
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="Levi 1.jpg"
+                    alt="Illustration for Leviticus: worship in Israel"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-leviticus-2/960/720"
+                    alt="Illustration for Leviticus: festivals and community"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-leviticus-3/960/720"
+                    alt="Leviticus illustration 3"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-leviticus-4/960/720"
+                    alt="Leviticus illustration 4"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-leviticus-5/960/720"
+                    alt="Leviticus illustration 5"
+                />
+                </div>
+            </div>
+            <div data-book-images="Numbers">
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-numbers-1/960/720"
+                    alt="Illustration for Numbers: journey in the wilderness"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-numbers-2/960/720"
+                    alt="Illustration for Numbers: the promised land"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-numbers-3/960/720"
+                    alt="Numbers illustration 3"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-numbers-4/960/720"
+                    alt="Numbers illustration 4"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-numbers-5/960/720"
+                    alt="Numbers illustration 5"
+                />
+                </div>
+            </div>
+            <div data-book-images="Deuteronomy">
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-deuteronomy-1/960/720"
+                    alt="Illustration for Deuteronomy: Moses speaks to Israel"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-deuteronomy-2/960/720"
+                    alt="Illustration for Deuteronomy: the people prepare to enter the land"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-deuteronomy-3/960/720"
+                    alt="Deuteronomy illustration 3"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-deuteronomy-4/960/720"
+                    alt="Deuteronomy illustration 4"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-deuteronomy-5/960/720"
+                    alt="Deuteronomy illustration 5"
+                />
+                </div>
+            </div>
+            <div data-book-images="Joshua">
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-joshua-1/960/720"
+                    alt="Illustration for Joshua: crossing into Canaan"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-joshua-2/960/720"
+                    alt="Illustration for Joshua: Israel settles the land"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-joshua-3/960/720"
+                    alt="Joshua illustration 3"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-joshua-4/960/720"
+                    alt="Joshua illustration 4"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-joshua-5/960/720"
+                    alt="Joshua illustration 5"
+                />
+                </div>
+            </div>
+            <div data-book-images="Judges">
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-judges-1/960/720"
+                    alt="Illustration for Judges: Israel in a turbulent era"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-judges-2/960/720"
+                    alt="Illustration for Judges: Israel's leaders"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-judges-3/960/720"
+                    alt="Judges illustration 3"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-judges-4/960/720"
+                    alt="Judges illustration 4"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-judges-5/960/720"
+                    alt="Judges illustration 5"
+                />
+                </div>
+            </div>
+            <div data-book-images="Ruth">
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-ruth-1/960/720"
+                    alt="Illustration for Ruth: Ruth and Naomi travel to Bethlehem"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-ruth-2/960/720"
+                    alt="Illustration for Ruth: Ruth gathers grain"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-ruth-3/960/720"
+                    alt="Ruth illustration 3"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-ruth-4/960/720"
+                    alt="Ruth illustration 4"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-ruth-5/960/720"
+                    alt="Ruth illustration 5"
+                />
+                </div>
+            </div>
+            <div data-book-images="1 Samuel">
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-1samuel-1/960/720"
+                    alt="Illustration for 1 Samuel: Samuel and Israel"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-1samuel-2/960/720"
+                    alt="Illustration for 1 Samuel: David and Goliath"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-1samuel-3/960/720"
+                    alt="1 Samuel illustration 3"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-1samuel-4/960/720"
+                    alt="1 Samuel illustration 4"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-1samuel-5/960/720"
+                    alt="1 Samuel illustration 5"
+                />
+                </div>
+            </div>
+            <div data-book-images="2 Samuel">
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-2samuel-1/960/720"
+                    alt="Illustration for 2 Samuel: David becomes king"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-2samuel-2/960/720"
+                    alt="Illustration for 2 Samuel: Jerusalem in David's reign"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-2samuel-3/960/720"
+                    alt="2 Samuel illustration 3"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-2samuel-4/960/720"
+                    alt="2 Samuel illustration 4"
+                />
+                </div>
+                <div class="book-image-item" data-book-image>
+                <img
+                    src="https://picsum.photos/seed/scripture-2samuel-5/960/720"
+                    alt="2 Samuel illustration 5"
+                />
+                </div>
+            </div>
+            <div
+                data-book-images="1 Kings"
+                data-image-one="https://picsum.photos/seed/scripture-1kings-1/960/720"
+                data-alt-one="Illustration for 1 Kings: Solomon builds the temple"
+                data-image-two="https://picsum.photos/seed/scripture-1kings-2/960/720"
+                data-alt-two="Illustration for 1 Kings: the prophet Elijah"
+            ></div>
+            <div
+                data-book-images="2 Kings"
+                data-image-one="https://picsum.photos/seed/scripture-2kings-1/960/720"
+                data-alt-one="Illustration for 2 Kings: the prophets of Israel"
+                data-image-two="https://picsum.photos/seed/scripture-2kings-2/960/720"
+                data-alt-two="Illustration for 2 Kings: Jerusalem in exile"
+            ></div>
+            <div
+                data-book-images="1 Chronicles"
+                data-image-one="https://picsum.photos/seed/scripture-1chronicles-1/960/720"
+                data-alt-one="Illustration for 1 Chronicles: David's kingdom"
+                data-image-two="https://picsum.photos/seed/scripture-1chronicles-2/960/720"
+                data-alt-two="Illustration for 1 Chronicles: preparations for the temple"
+            ></div>
+            <div
+                data-book-images="2 Chronicles"
+                data-image-one="https://picsum.photos/seed/scripture-2chronicles-1/960/720"
+                data-alt-one="Illustration for 2 Chronicles: the temple in Jerusalem"
+                data-image-two="https://picsum.photos/seed/scripture-2chronicles-2/960/720"
+                data-alt-two="Illustration for 2 Chronicles: return from exile"
+            ></div>
+            <div
+                data-book-images="Psalms"
+                data-image-one="https://picsum.photos/seed/scripture-psalms-1/960/720"
+                data-alt-one="Illustration for Psalms: songs of praise"
+                data-image-two="https://picsum.photos/seed/scripture-psalms-2/960/720"
+                data-alt-two="Illustration for Psalms: prayer and reflection"
+            ></div>
+            <div
+                data-book-images="Proverbs"
+                data-image-one="https://picsum.photos/seed/scripture-proverbs-1/960/720"
+                data-alt-one="Illustration for Proverbs: wisdom and learning"
+                data-image-two="https://picsum.photos/seed/scripture-proverbs-2/960/720"
+                data-alt-two="Illustration for Proverbs: wise choices"
+            ></div>
+            <div
+                data-book-images="Ecclesiastes"
+                data-image-one="https://picsum.photos/seed/scripture-ecclesiastes-1/960/720"
+                data-alt-one="Illustration for Ecclesiastes: reflection on life"
+                data-image-two="https://picsum.photos/seed/scripture-ecclesiastes-2/960/720"
+                data-alt-two="Illustration for Ecclesiastes: life's seasons"
+            ></div>
+            <div
+                data-book-images="Isaiah"
+                data-image-one="https://picsum.photos/seed/scripture-isaiah-1/960/720"
+                data-alt-one="Illustration for Isaiah: the prophet's message"
+                data-image-two="https://picsum.photos/seed/scripture-isaiah-2/960/720"
+                data-alt-two="Illustration for Isaiah: a vision of peace"
+            ></div>
+            <div
+                data-book-images="Jeremiah"
+                data-image-one="https://picsum.photos/seed/scripture-jeremiah-1/960/720"
+                data-alt-one="Illustration for Jeremiah: Jeremiah speaks to Judah"
+                data-image-two="https://picsum.photos/seed/scripture-jeremiah-2/960/720"
+                data-alt-two="Illustration for Jeremiah: hope and restoration"
+            ></div>
+            <div
+                data-book-images="Daniel"
+                data-image-one="https://picsum.photos/seed/scripture-daniel-1/960/720"
+                data-alt-one="Illustration for Daniel: Daniel in Babylon"
+                data-image-two="https://picsum.photos/seed/scripture-daniel-2/960/720"
+                data-alt-two="Illustration for Daniel: Daniel and the lions' den"
+            ></div>
+            <div
+                data-book-images="Jonah"
+                data-image-one="https://picsum.photos/seed/scripture-jonah-1/960/720"
+                data-alt-one="Illustration for Jonah: Jonah at sea"
+                data-image-two="https://picsum.photos/seed/scripture-jonah-2/960/720"
+                data-alt-two="Illustration for Jonah: Jonah travels to Nineveh"
+            ></div>
+            <div
+                data-book-images="Matthew"
+                data-image-one="https://picsum.photos/seed/scripture-matthew-1/960/720"
+                data-alt-one="Illustration for Matthew: the life of Jesus"
+                data-image-two="https://picsum.photos/seed/scripture-matthew-2/960/720"
+                data-alt-two="Illustration for Matthew: Jesus teaches his disciples"
+            ></div>
+            <div
+                data-book-images="Mark"
+                data-image-one="https://picsum.photos/seed/scripture-mark-1/960/720"
+                data-alt-one="Illustration for Mark: Jesus' ministry"
+                data-image-two="https://picsum.photos/seed/scripture-mark-2/960/720"
+                data-alt-two="Illustration for Mark: the empty tomb"
+            ></div>
+            <div
+                data-book-images="Luke"
+                data-image-one="https://picsum.photos/seed/scripture-luke-1/960/720"
+                data-alt-one="Illustration for Luke: Jesus welcomes outsiders"
+                data-image-two="https://picsum.photos/seed/scripture-luke-2/960/720"
+                data-alt-two="Illustration for Luke: the road to Jerusalem"
+            ></div>
+            <div
+                data-book-images="John"
+                data-image-one="https://picsum.photos/seed/scripture-john-1/960/720"
+                data-alt-one="Illustration for John: signs and encounters"
+                data-image-two="https://picsum.photos/seed/scripture-john-2/960/720"
+                data-alt-two="Illustration for John: hope and new life"
+            ></div>
+            <div
+                data-book-images="Acts"
+                data-image-one="https://picsum.photos/seed/scripture-acts-1/960/720"
+                data-alt-one="Illustration for Acts: the early church in Jerusalem"
+                data-image-two="https://picsum.photos/seed/scripture-acts-2/960/720"
+                data-alt-two="Illustration for Acts: Paul's journeys"
+            ></div>
+            <div
+                data-book-images="Romans"
+                data-image-one="https://picsum.photos/seed/scripture-romans-1/960/720"
+                data-alt-one="Illustration for Romans: Paul's letter to Rome"
+                data-image-two="https://picsum.photos/seed/scripture-romans-2/960/720"
+                data-alt-two="Illustration for Romans: the early church"
+            ></div>
+            <div
+                data-book-images="1 Corinthians"
+                data-image-one="https://picsum.photos/seed/scripture-1corinthians-1/960/720"
+                data-alt-one="Illustration for 1 Corinthians: the church in Corinth"
+                data-image-two="https://picsum.photos/seed/scripture-1corinthians-2/960/720"
+                data-alt-two="Illustration for 1 Corinthians: love and community"
+            ></div>
+            <div
+                data-book-images="Ephesians"
+                data-image-one="https://picsum.photos/seed/scripture-ephesians-1/960/720"
+                data-alt-one="Illustration for Ephesians: unity in the church"
+                data-image-two="https://picsum.photos/seed/scripture-ephesians-2/960/720"
+                data-alt-two="Illustration for Ephesians: hope and faith"
+            ></div>
+            <div
+                data-book-images="Revelation"
+                data-image-one="https://picsum.photos/seed/scripture-revelation-1/960/720"
+                data-alt-one="Illustration for Revelation: John's vision"
+                data-image-two="https://picsum.photos/seed/scripture-revelation-2/960/720"
+                data-alt-two="Illustration for Revelation: a renewed creation"
+            ></div>
+            </template>
+            <script src="script.js"></script>
+        </body>
+        </html>
